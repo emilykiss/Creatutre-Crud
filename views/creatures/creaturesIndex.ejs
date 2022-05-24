@@ -1,0 +1,24 @@
+<h1>Creatures</h1>
+
+<form method="GET" action="/creatures">
+    <label for="typeFilter">Filter to Find your Creature:</label>
+    <input type="text" name="typeFilter" id="typeFilter">
+    <button type="submit">Filter</button>
+</form>
+
+
+<a href="/creatures/new">Add</a>
+
+
+<ul>
+    <% myCreatures.forEach((animal, index) => { %>
+        <li>
+            <%= animal.type %>
+        <a href="/creatures/edit/<%= index %>">Edit</a>
+
+        <form method="POST" action="/creatures/<%= index %>/?_method=DELETE">
+            <button type="submit">Delete</button>
+        </form>
+        </li>
+   <% }) %>
+</ul>

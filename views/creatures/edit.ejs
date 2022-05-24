@@ -1,0 +1,11 @@
+<form method="POST" action="/creatures/<%= creatureId %>/?_method=PUT">
+    <label for="Type">Type:</label>
+    <input id="type" type="text" name="type" value="<%= creature.type %>" />
+    <br>
+    <label for="creatureImage">Image URL:</label>
+    <input id="creatureData" type="text" name="img_url" value="<%= creature.img_url %>"/>
+    <button type="submit">Update the image!</button>
+    <br>
+    
+    <img src= "<%= creature.img_url%>"/>
+</form>
